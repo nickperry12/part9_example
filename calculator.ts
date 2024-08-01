@@ -1,4 +1,4 @@
-type Operation = 'multiply' | 'divide' | 'add';
+export type Operation = 'multiply' | 'divide' | 'add';
 
 const calculator = (a: number, b: number, operation: Operation): string | number => {
   switch (operation) {
@@ -16,16 +16,4 @@ const calculator = (a: number, b: number, operation: Operation): string | number
   }
 };
 
-try {
-  console.log(calculator(10, 5, 'multiply'));
-  console.log(calculator(10, 5, 'divide'));
-  console.log(calculator(10, 5, 'add'));
-  console.log(calculator(10, 0, 'divide'));
-} catch (error: unknown) {
-  let errorMessage = 'Something went wrong: ';
-  if (error instanceof Error) {
-    errorMessage += error.message
-  }
-  console.log(errorMessage);
-}
-
+export { calculator };
